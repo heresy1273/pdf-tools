@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporary / backup files
+*.bak
+*.tmp
+*~
+*.swp
+*.swo
+
+# Local secrets / credentials
+passwords.txt
+*.passwords
+*.secrets
+.env
+.env.*
+
+# Editor / OS metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local test output
+test-output/
+tmp/
+.release-backup-*
+.release-backup-*

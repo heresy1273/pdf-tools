@@ -1,0 +1,65 @@
+[Desktop Entry]
+Type=Service
+MimeType=application/pdf;
+Actions=ARRANGER;MERGE;COMPRESS180;OCRDESPLIT;OCRDE;OCREN;OCRTR;SPLIT;ROTODDLEFT;ROTODDRIGHT;EMPTYCHECK;REMOVEPROTECTION;
+X-KDE-Submenu=PDF Werkzeuge
+
+[Desktop Action ARRANGER]
+Name=Mit PDF Arranger bearbeiten
+Icon=application-pdf
+Exec=/usr/bin/pdfarranger %F
+
+[Desktop Action MERGE]
+Name=PDFs Zusammenführen
+Icon=merge
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/pdf-merge.sh %F
+
+[Desktop Action COMPRESS180]
+Name=PDF Komprimieren (180dpi)
+Icon=archive-extract
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/pdf-compress-180.sh %F
+
+[Desktop Action OCRDESPLIT]
+Name=OCR Deutsch +  ausrichten + vereinzeln
+Icon=xapp-text-case-symbolic
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/pdf-bulk.sh ocr-de-split %F
+
+[Desktop Action OCRDE]
+Name=OCR Deutsch + ausrichten
+Icon=xapp-text-case-symbolic
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/ocr-pdf.sh deu %F
+
+[Desktop Action OCREN]
+Name=OCR English + ausrichten
+Icon=xapp-text-case-symbolic
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/ocr-pdf.sh eng %F
+
+[Desktop Action OCRTR]
+Name=OCR Türkisch + ausrichten
+Icon=xapp-text-case-symbolic
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/ocr-pdf.sh tur %F
+
+[Desktop Action SPLIT]
+Name=PDF vereinzeln
+Icon=dialog-layers-symbolic
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/pdf-bulk.sh split %F
+
+[Desktop Action ROTODDLEFT]
+Name=Ungerade > Links drehen
+Icon=object-rotate-left
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/pdf-alternate-rotate.sh odd-left %F
+
+[Desktop Action ROTODDRIGHT]
+Name=Ungerade > Rechts drehen
+Icon=object-rotate-right
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/pdf-alternate-rotate.sh odd-right %F
+
+[Desktop Action EMPTYCHECK]
+Name=⁣Leere Seiten entfernen
+Icon=adw-external-link-symbolic
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/pdf-empty-pages.sh %F
+
+[Desktop Action REMOVEPROTECTION]
+Name=PDF-Schutz entfernen
+Icon=document-decrypt
+Exec=/usr/bin/konsole -e /bin/bash @INSTALL_DIR@/pdf-remove-protection.sh %F
